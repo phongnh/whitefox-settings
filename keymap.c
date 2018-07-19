@@ -14,7 +14,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include "whitefox.h"
+#include QMK_KEYBOARD_H
 
 enum custom_layers {
     _BASE,
@@ -37,7 +37,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |FN   | Gui | Alt |             SPACE            |Alt |Gui | FN |Left|Down|Rght|
      * `------------------------------------------------------------------------------'
      */
-    [_BASE] = KEYMAP( \
+    [_BASE] = LAYOUT( \
         KC_ESC,            KC_1,     KC_2,         KC_3,  KC_4,  KC_5,  KC_6,  KC_7,  KC_8,  KC_9,     KC_0,                 KC_MINS,           KC_EQL,   KC_BSPC,            KC_BSPC,  KC_GRV,   \
         LT(_LFN, KC_TAB),  KC_Q,     KC_W,         KC_E,  KC_R,  KC_T,  KC_Y,  KC_U,  KC_I,  KC_O,     KC_P,                 KC_LBRC,           KC_RBRC,  LT(_RFN, KC_BSLS),            KC_DEL,   \
         CTL_T(KC_ESC),     KC_A,     KC_S,         KC_D,  KC_F,  KC_G,  KC_H,  KC_J,  KC_K,  KC_L,     LT(_MOUSE, KC_SCLN),  ALT_T(KC_QUOTE),   KC_NUHS,  RCTL_T(KC_ENT),               KC_PGUP,  \
@@ -58,7 +58,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |     |     |     |         HYPER / SPACE        |    |    |    |F14 |VolD| F15|
     * `------------------------------------------------------------------------------'
     */
-    [_LFN] = KEYMAP( \
+    [_LFN] = LAYOUT( \
         KC_TRNS,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_RALT,  KC_TRNS,  KC_PSCR,  \
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_RGUI,            KC_INS,   \
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_HOME,  \
@@ -79,7 +79,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |     |     |     |           MEH / SPACE        |    |    |    |F14 |VolD| F15|
     * `------------------------------------------------------------------------------'
     */
-    [_RFN] = KEYMAP( \
+    [_RFN] = LAYOUT( \
         KC_LALT,  KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TRNS,  KC_TRNS,  KC_PSCR,  \
         KC_LGUI,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_INS,   \
         KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_HOME,  \
@@ -100,7 +100,7 @@ const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     * |     |     |     |            LED               |    |    |    |    |    |    |
     * `------------------------------------------------------------------------------'
     */
-    [_MOUSE] = KEYMAP( \
+    [_MOUSE] = LAYOUT( \
         RESET,    KC_TRNS,  KC_FN1,   KC_FN2,   KC_FN3,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  \
         KC_TRNS,  KC_TRNS,  KC_BTN3,  KC_MS_U,  KC_BTN2,  KC_TRNS,  KC_TRNS,  KC_BTN2,  KC_WH_U,  KC_BTN3,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  \
         KC_CAPS,  KC_BTN1,  KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_BTN1,  KC_BTN1,  KC_WH_L,  KC_WH_D,  KC_WH_R,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,  \
